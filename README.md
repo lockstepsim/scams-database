@@ -1,7 +1,7 @@
 # scams-database
 Developed by volunteers from the Economics discord server.
 
-```
+```yaml
 # April 10, 2026
 # Instructions by Leslie D. @lespam for Economics Server Discord.
 # Requires Git and Anaconda.
@@ -20,7 +20,7 @@ conda create -n scams python Django
 conda activate scams
 
 ##############################
-makemigrations and run bot
+# makemigrations and run bot
 ##############################
 # In the folder where manage.py file is
 # First time only
@@ -38,7 +38,7 @@ python manage.py migrate
 python manage.py run_bot
 
 ##############################
-push your results
+# push your results
 ##############################
 git add .
 git commit -m 'message'
