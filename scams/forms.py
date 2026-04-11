@@ -4,7 +4,6 @@ from .models import Scam
 class ScamReportForm(forms.ModelForm):
     class Meta:
         model = Scam
-        # We include every field from the new model
         fields = [
             'title', 'scam_type', 'date_occurred', 'amount_lost',
             'currency', 'platform', 'description', 'severity',
@@ -13,7 +12,6 @@ class ScamReportForm(forms.ModelForm):
             'country', 'anonymous'
         ]
 
-        # Widgets map your Python fields to specific HTML styles
         widgets = {
             'title': forms.TextInput(attrs={'id': 'id_title'}),
             'scam_type': forms.Select(attrs={'id': 'id_scam_type'}),

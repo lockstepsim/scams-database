@@ -43,7 +43,6 @@
 
         label { font-size: 13px; font-weight: 500; color: var(--text-secondary); }
 
-        /* Style the Django-generated inputs */
         input, select, textarea {
             width: 100%; padding: 12px;
             border: 1px solid var(--border); border-radius: var(--radius);
@@ -114,7 +113,6 @@
 
     <script>
         function updateSeverity(val) {
-            // Adjust the colored bar based on slider position
             document.getElementById('sevFill').style.width = ((val - 1) / 4 * 100) + '%';
         }
     </script>
