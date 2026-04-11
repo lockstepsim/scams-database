@@ -9,7 +9,7 @@ django.setup()
 from scams.models import Scam
 
 def main():
-    print("ok")
+    print("")
 
 if __name__ == "__main__":
 
@@ -17,14 +17,16 @@ if __name__ == "__main__":
     Scam.objects.create(
     title="Scam phone call",
     description="Trying to get credit card info",
-    scam_type="phishing",
+    phishing=True,
+    contact_method="phone_call",
+    scam_type="financial",
     date_seen="2026-04-01",
     url_or_contact="076 579 46 34"
     )
     #create multiple scams
     Scam.objects.bulk_create([
-    Scam(title="scam A", description="some really bad scam...", scam_type="phishing", date_seen="2026-04-01"),
-    Scam(title="scam B", description="dangerous scan...", scam_type="sms", date_seen="2026-04-02"),
+    Scam(title="scam A", description="some really bad scam...", phishing=True, contact_method="social_media", scam_type="idendity", date_seen="2026-04-01"),
+    Scam(title="scam B", description="dangerous scan...", phishing=True, contact_method="sms", scam_type="financial", date_seen="2026-04-02"),
     ])
 
     #read existing data
@@ -33,7 +35,7 @@ if __name__ == "__main__":
     print(df)
     
     #filter
-    Scam.objects.filter(scam_type="phishing")
+    Scam.objects.filter(scam_type="financial")
     Scam.objects.filter(date_seen__year=2026)
     
     #delete a scam
