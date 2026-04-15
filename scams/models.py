@@ -49,7 +49,6 @@ class Scam(models.Model):
     phishing = models.BooleanField(null=True, blank=True)
     contact_method = models.CharField(max_length=100,choices=SCAM_CHANNELS, default="undefined")
     scam_type = models.CharField(max_length=100,choices=SCAM_TYPES, default="undefined")
-    date_seen = models.DateField()
     url_or_contact = models.CharField(max_length=255, blank=True)
     severity = models.IntegerField(
         default=2,
